@@ -21,6 +21,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -58,6 +59,8 @@ fun ReviewAndRating() {
             fontSize = 16.sp,
             color = Color.White,
             fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.height(28.dp))
+        Rating()
         Spacer(modifier = Modifier.height(28.dp))
         ReviewList(data)
     }
@@ -102,6 +105,28 @@ fun ReviewCard(review: Review) {
                 .background(color = Color(parseColor("#1A1F29")))
         )
         Spacer(modifier = Modifier.height(24.dp))
+    }
+}
+
+@Composable
+fun Rating() {
+
+    Row (
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center
+    ) {
+        Text("4.9", color = Color.White, fontSize = 48.sp, fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.width(17.dp))
+        Column {
+            Image(
+                modifier = Modifier
+                    .size(height = 12.dp, width = 76.dp),
+                painter = painterResource(R.drawable.rate),
+                contentDescription = "AppRate"
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text("70M Reviews", color = Color(parseColor("#A8ADB7")), fontSize=12.sp)
+        }
     }
 }
 

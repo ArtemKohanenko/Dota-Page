@@ -45,7 +45,10 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
         color = Color(parseColor("#050B18"))
     ) {
         Column {
-            Spacer(modifier = Modifier.height(93.dp))
+            Spacer(modifier = Modifier.height(16.dp))
+            GenresList(modifier = Modifier
+                .padding(start=24.dp))
+            Spacer(modifier = Modifier.height(24.dp))
             Text(modifier = Modifier
                 .padding(
                     start = 24.dp,
