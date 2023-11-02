@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -30,16 +31,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dotapage.R
 
+val screensList = listOf(
+    R.drawable.screen_1,
+    R.drawable.screen_1,
+    R.drawable.screen_1
+)
+
 @Composable
 fun DotaScreenContent(modifier: Modifier = Modifier) {
-    val screensList = listOf(
-        R.drawable.screen_1,
-        R.drawable.screen_1,
-        R.drawable.screen_1
-    )
 
     Surface(modifier = modifier
-        .fillMaxSize(),
+        .height(1000.dp),
         color = Color(parseColor("#050B18"))
     ) {
         Column {
@@ -53,17 +55,20 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
                 color = Color.White
             )
             Spacer(modifier = Modifier.height(24.dp))
-            LazyRow {
-                items(screensList) { screen ->
-                    Image(
-                        painter = painterResource(screen),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .size(width=240.dp, height=128.dp)
-                            .clip(shape = RoundedCornerShape(12.dp))
-                    )
-                }
+            Box(modifier = Modifier
+                .padding(
+                    start = 24.dp,
+                    end = 24.dp
+                )) {
+                Screens()
+            }
+            Spacer(modifier = Modifier.height(24.dp))
+            Box(modifier = Modifier
+                .padding(
+                    start = 24.dp,
+                    end = 24.dp
+                    )) {
+                ReviewAndRating()
             }
             Spacer(modifier = Modifier.height(24.dp))
             Button(
@@ -76,6 +81,22 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
             ) {
                 Text("Install", fontSize=20.sp)
             }
+        }
+    }
+}
+
+@Composable
+fun Screens() {
+    LazyRow {
+        items(screensList) { screen ->
+            Image(
+                painter = painterResource(screen),
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(end=16.dp)
+                    .size(width=240.dp, height=128.dp)
+                    .clip(shape = RoundedCornerShape(12.dp))
+            )
         }
     }
 }
