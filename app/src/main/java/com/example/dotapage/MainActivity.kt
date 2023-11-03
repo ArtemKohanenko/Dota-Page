@@ -45,6 +45,10 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import Components.DotaScreen
 import android.graphics.Color.parseColor
 import android.view.WindowManager
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,3 +78,8 @@ private fun ApplySystemBarColors(){
         systemUiController.setNavigationBarColor(color=Color.Transparent)
     }
 }
+
+val fontF = FontFamily(
+    Font(R.font.sk_modernist_bold, FontWeight.Bold),
+    Font(R.font.sk_modernist_regular, FontWeight.Normal)
+)

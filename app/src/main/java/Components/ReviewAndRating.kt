@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dotapage.R
+import com.example.dotapage.fontF
 
 data class Review(val author: String, val date: String, val body: String, val picture: Int)
 
@@ -58,6 +59,7 @@ fun ReviewAndRating() {
             "Review & Ratings",
             fontSize = 16.sp,
             color = Color.White,
+            fontFamily = fontF,
             fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(28.dp))
         Rating()
@@ -89,13 +91,13 @@ fun ReviewCard(review: Review) {
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column {
-                Text(review.author, color= Color.White)
+                Text(review.author, color= Color.White, fontFamily = fontF)
                 Spacer(modifier = Modifier.height(7.dp))
-                Text(review.date, color = Color(parseColor("#A8ADB7")))
+                Text(review.date, color = Color(parseColor("#A8ADB7")), fontFamily = fontF)
             }
         }
         Spacer(modifier = Modifier.height(17.dp))
-        Text(review.body, color = Color(parseColor("#A8ADB7")))
+        Text(review.body, color = Color(parseColor("#A8ADB7")), fontFamily = fontF)
 
         Spacer(modifier = Modifier.height(24.dp))
         Box(
@@ -115,7 +117,12 @@ fun Rating() {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
-        Text("4.9", color = Color.White, fontSize = 48.sp, fontWeight = FontWeight.Bold)
+        Text("4.9",
+            color = Color.White,
+            fontSize = 48.sp,
+            fontWeight = FontWeight.Bold,
+            fontFamily = fontF
+            )
         Spacer(modifier = Modifier.width(17.dp))
         Column {
             Image(
@@ -125,7 +132,11 @@ fun Rating() {
                 contentDescription = "AppRate"
             )
             Spacer(modifier = Modifier.height(8.dp))
-            Text("70M Reviews", color = Color(parseColor("#A8ADB7")), fontSize=12.sp)
+            Text("70M Reviews",
+                color = Color(parseColor("#A8ADB7")),
+                fontSize=12.sp,
+                fontFamily = fontF
+                )
         }
     }
 }

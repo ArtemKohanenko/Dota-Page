@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dotapage.R
+import com.example.dotapage.fontF
 
 @Composable
 fun GameTitle (modifier: Modifier = Modifier) {
@@ -44,6 +45,7 @@ fun GameTitle (modifier: Modifier = Modifier) {
             Text("DoTA 2",
                 color = Color.White,
                 fontSize = 20.sp,
+                fontFamily = fontF,
                 fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(7.dp))
             Row {
@@ -54,7 +56,10 @@ fun GameTitle (modifier: Modifier = Modifier) {
                     contentDescription = "AppRate"
                 )
                 Spacer(modifier = Modifier.width(10.dp))
-                Text("70M", fontSize = 10.sp, color = Color(parseColor("#45454D")))
+                Text("70M",
+                    fontSize = 10.sp,
+                    fontFamily = fontF,
+                    color = Color(parseColor("#45454D")))
             }
         }
     }
