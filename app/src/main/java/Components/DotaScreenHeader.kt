@@ -55,7 +55,7 @@ fun DotaScreenHeader(
                 .background(
                     Color(android.graphics.Color.parseColor("#050B18")),
                     shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp))
-                .height(20.dp)
+                .height(55.dp)
                 .fillMaxWidth()
                 .zIndex(1f)
         ) {}

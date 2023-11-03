@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -35,7 +36,11 @@ fun GameTitle (modifier: Modifier = Modifier) {
     Row (modifier = modifier) {
         DotaIcon()
         Spacer(modifier = Modifier.width(14.dp))
-        Column (verticalArrangement = Arrangement.Bottom) {
+        Column (
+            verticalArrangement = Arrangement.Bottom,
+            modifier = Modifier
+                .height(84.dp)
+        ) {
             Text("DoTA 2",
                 color = Color.White,
                 fontSize = 20.sp,

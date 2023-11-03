@@ -44,9 +44,11 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 import Components.DotaScreen
 import android.graphics.Color.parseColor
+import android.view.WindowManager
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         super.onCreate(savedInstanceState)
         setContent {
             DotaPageTheme {
