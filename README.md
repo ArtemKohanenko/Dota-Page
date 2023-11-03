@@ -2,6 +2,6 @@
 Верстка мобильного приложения при помощи Kotlin Jetpack Compose.
 
 Скриншоты:
-![screen1](./Screens/screen_1.jpg)
+![screen1](./Screens/screen_1.jpg | width = 200)
 
-![screen2](./Screens/screen_2.jpg)
+![screen2](./Screens/screen_2.jpg | width = 200)
