@@ -93,6 +93,9 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
 @Composable
 fun Screens() {
     LazyRow {
+        item {
+            Video(R.drawable.screen_1)
+        }
         items(screensList) { screen ->
             Image(
                 painter = painterResource(screen),
