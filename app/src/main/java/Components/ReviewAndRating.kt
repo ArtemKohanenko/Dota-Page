@@ -125,12 +125,8 @@ fun Rating() {
             )
         Spacer(modifier = Modifier.width(17.dp))
         Column {
-            Image(
-                modifier = Modifier
-                    .size(height = 12.dp, width = 76.dp),
-                painter = painterResource(R.drawable.rate),
-                contentDescription = "AppRate"
-            )
+            RatingStars(4.9f, modifier = Modifier
+                .height(12.dp))
             Spacer(modifier = Modifier.height(8.dp))
             Text("70M Reviews",
                 color = Color(parseColor("#A8ADB7")),

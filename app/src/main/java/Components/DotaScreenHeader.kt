@@ -70,7 +70,8 @@ private fun HeaderBackground (
     Image(
         modifier = Modifier
             .fillMaxWidth()
-            .height(340.dp),
+            .height(340.dp)
+            .aspectRatio(1f),
         painter = painter,
         contentDescription = "Header picture"
     )

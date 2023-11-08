@@ -34,8 +34,7 @@ import com.example.dotapage.fontF
 
 val screensList = listOf(
     R.drawable.screen_1,
-    R.drawable.screen_1,
-    R.drawable.screen_1
+    R.drawable.screen_2
 )
 
 @Composable

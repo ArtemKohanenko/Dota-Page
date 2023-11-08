@@ -49,12 +49,8 @@ fun GameTitle (modifier: Modifier = Modifier) {
                 fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(7.dp))
             Row {
-                Image(
-                    modifier = Modifier
-                        .size(height = 12.dp, width = 76.dp),
-                    painter = painterResource(R.drawable.rate),
-                    contentDescription = "AppRate"
-                )
+                RatingStars(4.9f, modifier = Modifier
+                    .height(12.dp))
                 Spacer(modifier = Modifier.width(10.dp))
                 Text("70M",
                     fontSize = 10.sp,
