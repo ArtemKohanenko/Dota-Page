@@ -2,7 +2,7 @@ package Components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -14,20 +14,19 @@ import com.example.dotapage.R
 fun RatingStars(rating: Float, modifier: Modifier = Modifier) {
     Row (modifier = modifier) {
         repeat(5) { index ->
+            val tempIndex = index + 1
             val painter =
-            if (index.toFloat() + 1.5 < rating) {
+            if (index + 1 < rating) {
                 painterResource(R.drawable.star_filled)
             }
-            else if (index.toFloat() + 0.5 < rating && rating < index.toFloat() + 1) {
-                painterResource(R.drawable.star_empty)
+            else if (index.toFloat() + 0.5 < rating) {
+                painterResource(R.drawable.star_half)
             }
             else {
-                painterResource(R.drawable.star_half)
+                painterResource(R.drawable.star_empty)
             }
 
             Image(
-                modifier = Modifier
-                    .size(12.dp),
                 painter = painter,
                 contentDescription = null
             )
@@ -38,5 +37,5 @@ fun RatingStars(rating: Float, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun PreviewRatingStars() {
-    RatingStars(3.4f)
+    RatingStars(3.6f, modifier = Modifier.height(12.dp))
 }
