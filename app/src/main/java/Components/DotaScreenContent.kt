@@ -4,41 +4,27 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.dotapage.R
 import com.example.dotapage.ui.theme.AppTheme
 import com.example.dotapage.ui.theme.fontF
 
-val screensList = listOf(
-    R.drawable.screen_1,
-    R.drawable.screen_2
-)
 
 @Composable
 fun DotaScreenContent(modifier: Modifier = Modifier) {
 
-    Surface(modifier = modifier
-        .height(1000.dp),
-        color = AppTheme.BgColors.primary
-    ) {
+    Surface(color = AppTheme.BgColors.primary) {
         Column {
             Spacer(modifier = Modifier.height(16.dp))
             GenresList(modifier = Modifier
@@ -59,7 +45,7 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
                     start = 24.dp,
                     end = 24.dp
                 )) {
-                Screens()
+                ScreensChipsRow()
             }
             Spacer(modifier = Modifier.height(24.dp))
             Box(modifier = Modifier
@@ -80,25 +66,7 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
             ) {
                 Text("Install", fontSize=20.sp)
             }
-        }
-    }
-}
-
-@Composable
-fun Screens() {
-    LazyRow {
-        item {
-            Video(R.drawable.screen_1)
-        }
-        items(screensList) { screen ->
-            Image(
-                painter = painterResource(screen),
-                contentDescription = null,
-                modifier = Modifier
-                    .padding(end=16.dp)
-                    .size(width=240.dp, height=128.dp)
-                    .clip(shape = RoundedCornerShape(12.dp))
-            )
+            Spacer(modifier = Modifier.height(80.dp))
         }
     }
 }

@@ -28,34 +28,14 @@ import com.example.dotapage.ui.theme.fontF
 @Composable
 fun GameTitle (modifier: Modifier = Modifier) {
     Row (modifier = modifier) {
-        DotaIcon()
+        GameIcon()
         Spacer(modifier = Modifier.width(14.dp))
-        Column (
-            verticalArrangement = Arrangement.Bottom,
-            modifier = Modifier
-                .height(84.dp)
-        ) {
-            Text("DoTA 2",
-                color = AppTheme.TextColors.title,
-                fontSize = 20.sp,
-                fontFamily = fontF,
-                fontWeight = FontWeight.Bold)
-            Spacer(modifier = Modifier.height(7.dp))
-            Row {
-                RatingStars(4.9f, modifier = Modifier
-                    .height(12.dp))
-                Spacer(modifier = Modifier.width(10.dp))
-                Text("70M",
-                    fontSize = 10.sp,
-                    fontFamily = fontF,
-                    color = AppTheme.TextColors.secondary)
-            }
-        }
+        GameInfo()
     }
 }
 
 @Composable
-private fun DotaIcon(modifier: Modifier = Modifier) {
+private fun GameIcon(modifier: Modifier = Modifier) {
 
     Box(modifier = Modifier
         .background(AppTheme.BgColors.secondary, shape = RoundedCornerShape(12.dp))
@@ -76,10 +56,35 @@ private fun DotaIcon(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+private fun GameInfo() {
+    Column (
+        verticalArrangement = Arrangement.Bottom,
+        modifier = Modifier
+            .height(84.dp)
+    ) {
+        Text("DoTA 2",
+            color = AppTheme.TextColors.title,
+            fontSize = 20.sp,
+            fontFamily = fontF,
+            fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.height(7.dp))
+        Row {
+            RatingStars(4.9f, modifier = Modifier
+                .height(12.dp))
+            Spacer(modifier = Modifier.width(10.dp))
+            Text("70M",
+                fontSize = 10.sp,
+                fontFamily = fontF,
+                color = AppTheme.TextColors.secondary)
+        }
+    }
+}
+
 @Preview
 @Composable
 fun PreviewDotaIcon() {
-    DotaIcon()
+    GameIcon()
 }
 
 @Preview

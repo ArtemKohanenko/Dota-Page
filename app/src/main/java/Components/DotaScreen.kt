@@ -16,7 +16,8 @@ fun DotaScreen() {
     val lazyListState = rememberLazyListState()
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize()){
+        modifier = Modifier.fillMaxSize()
+    ) {
         item {
             DotaScreenHeader()
         }
