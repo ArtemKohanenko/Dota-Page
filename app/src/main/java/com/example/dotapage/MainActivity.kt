@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
                 ApplySystemBarColors()
 
                 Surface(
-                    color = Color(parseColor("#050B18")),
+                    color = AppTheme.BgColors.primary,
                     modifier = Modifier.fillMaxSize()
                 ){
                     DotaScreen()
@@ -78,8 +78,3 @@ private fun ApplySystemBarColors(){
         systemUiController.setNavigationBarColor(color=Color.Transparent)
     }
 }
-
-val fontF = FontFamily(
-    Font(R.font.sk_modernist_bold, FontWeight.Bold),
-    Font(R.font.sk_modernist_regular, FontWeight.Normal)
-)

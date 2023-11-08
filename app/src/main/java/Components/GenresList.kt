@@ -1,26 +1,19 @@
 package Components
 
-import android.graphics.Color.parseColor
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.dotapage.R
+import com.example.dotapage.ui.theme.AppTheme
 
 val genresList = listOf(
     "MOBA",
@@ -43,11 +36,11 @@ fun GenresList(modifier: Modifier = Modifier) {
 fun GenreTag(genre: String) {
     Box (modifier = Modifier
         .background(
-            Color(68, 169, 244, 61),
+            AppTheme.BgColors.genreTag,
             shape = RoundedCornerShape(100.dp))
     ){
         Text(genre,
-            color = Color(parseColor("#41A0E7")),
+            color = AppTheme.TextColors.genreTag,
             fontSize = 10.sp,
             modifier = Modifier
                 .padding(

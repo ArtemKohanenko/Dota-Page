@@ -1,6 +1,8 @@
 package com.example.dotapage.ui.theme
 
 import android.app.Activity
+import android.graphics.Color.argb
+import android.graphics.Color.parseColor
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -74,9 +76,21 @@ fun DotaPageTheme(
     )
 }
 
-val AppTheme = object {
-    val BgColors = object {
-        val primary: Color = Color.Black
-        val secondary: Color = Color.Gray
+object AppTheme {
+    object BgColors {
+        val primary: Color = Color(parseColor("#050B18"))
+        val secondary: Color = Color(parseColor("#000000"))
+        var tertiary: Color = Color(parseColor("#1A1F29"))
+        var genreTag: Color = Color(argb(61, 68, 169, 244))
+    }
+    object ButtonColors {
+        val primary: Color = Color(parseColor("#F4D144"))
+    }
+    object TextColors {
+        val primary: Color = Color(argb(179, 238, 242, 251))
+        val secondary: Color = Color(argb(102, 255, 255, 255))
+        val title: Color = Color(parseColor("#FFFFFF"))
+        val button: Color = Color(parseColor("#050B18"))
+        var genreTag: Color = Color(parseColor("#44A9F4"))
     }
 }

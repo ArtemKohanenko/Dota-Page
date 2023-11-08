@@ -1,6 +1,5 @@
 package Components
 
-import android.graphics.Color.parseColor
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -8,31 +7,25 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dotapage.R
-import com.example.dotapage.fontF
+import com.example.dotapage.ui.theme.AppTheme
+import com.example.dotapage.ui.theme.fontF
 
 data class Review(val author: String, val date: String, val body: String, val picture: Int)
 
@@ -58,7 +51,7 @@ fun ReviewAndRating() {
         Text(
             "Review & Ratings",
             fontSize = 16.sp,
-            color = Color.White,
+            color = AppTheme.TextColors.primary,
             fontFamily = fontF,
             fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(28.dp))
@@ -91,20 +84,20 @@ fun ReviewCard(review: Review) {
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column {
-                Text(review.author, color= Color.White, fontFamily = fontF)
+                Text(review.author, color= AppTheme.TextColors.title, fontFamily = fontF)
                 Spacer(modifier = Modifier.height(7.dp))
-                Text(review.date, color = Color(parseColor("#A8ADB7")), fontFamily = fontF)
+                Text(review.date, color = AppTheme.TextColors.secondary, fontFamily = fontF)
             }
         }
         Spacer(modifier = Modifier.height(17.dp))
-        Text(review.body, color = Color(parseColor("#A8ADB7")), fontFamily = fontF)
+        Text(review.body, color = AppTheme.TextColors.primary, fontFamily = fontF)
 
         Spacer(modifier = Modifier.height(24.dp))
         Box(
             modifier = Modifier
                 .height(1.dp)
                 .width(300.dp)
-                .background(color = Color(parseColor("#1A1F29")))
+                .background(color = AppTheme.BgColors.tertiary)
         )
         Spacer(modifier = Modifier.height(24.dp))
     }
@@ -118,7 +111,7 @@ fun Rating() {
         horizontalArrangement = Arrangement.Center
     ) {
         Text("4.9",
-            color = Color.White,
+            color = AppTheme.TextColors.title,
             fontSize = 48.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = fontF
@@ -129,7 +122,7 @@ fun Rating() {
                 .height(12.dp))
             Spacer(modifier = Modifier.height(8.dp))
             Text("70M Reviews",
-                color = Color(parseColor("#A8ADB7")),
+                color = AppTheme.TextColors.secondary,
                 fontSize=12.sp,
                 fontFamily = fontF
                 )
