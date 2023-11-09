@@ -85,6 +85,7 @@ object AppTheme {
     }
     object ButtonColors {
         val primary: Color = Color(parseColor("#F4D144"))
+        val secondary: Color = Color(parseColor("#3861A1"))
     }
     object TextColors {
         val primary: Color = Color(argb(179, 238, 242, 251))
