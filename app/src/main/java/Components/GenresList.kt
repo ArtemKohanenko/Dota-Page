@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dotapage.R
 import com.example.dotapage.ui.theme.AppTheme
+import com.example.dotapage.ui.theme.fontF
 
 @Preview
 @Composable
@@ -41,7 +42,7 @@ fun GenreTag(genre: String) {
             AppTheme.BgColors.genreTag,
             shape = RoundedCornerShape(100.dp))
     ){
-        Text(genre,
+        Text(genre.uppercase(),
             color = AppTheme.TextColors.genreTag,
             fontSize = 10.sp,
             modifier = Modifier
@@ -50,6 +51,8 @@ fun GenreTag(genre: String) {
                     end=10.dp,
                     bottom=5.dp,
                     top=5.dp
-                ))
+                ),
+            fontFamily = fontF
+        )
     }
 }
