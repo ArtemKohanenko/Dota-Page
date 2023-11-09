@@ -3,6 +3,6 @@
 
 Скриншоты:
 
-![screen1](./Screens/screen_1.jpg)
+<img src="./Screens/screen_1.jpg" width="300">
 
-![screen2](./Screens/screen_2.jpg)
+<img src="./Screens/screen_2.jpg" width="300">
