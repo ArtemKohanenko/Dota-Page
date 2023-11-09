@@ -10,20 +10,22 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.dotapage.R
 import com.example.dotapage.ui.theme.AppTheme
-
-val genresList = listOf(
-    "MOBA",
-    "MULTIPLAYER",
-    "STRATEGY"
-)
 
 @Preview
 @Composable
 fun GenresList(modifier: Modifier = Modifier) {
+    val genresList = listOf(
+        stringResource(R.string.genre_moba),
+        stringResource(R.string.genre_multiplayer),
+        stringResource(R.string.genre_strategy)
+    )
+
     LazyRow (modifier = modifier,
         horizontalArrangement = Arrangement.spacedBy(10.dp)) {
         items(genresList) { genre ->

@@ -14,9 +14,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.dotapage.R
 import com.example.dotapage.ui.theme.AppTheme
 import com.example.dotapage.ui.theme.fontF
 
@@ -35,7 +37,7 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
                     start = 24.dp,
                     end = 24.dp,
                     ),
-                text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
+                text = stringResource(R.string.app_description),
                 color = AppTheme.TextColors.primary,
                 fontFamily = fontF
             )
@@ -60,11 +62,11 @@ fun DotaScreenContent(modifier: Modifier = Modifier) {
                 onClick = {},
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
-                    .size(width=327.dp, height=64.dp),
+                    .size(width = 327.dp, height = 64.dp),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = AppTheme.ButtonColors.primary)
             ) {
-                Text("Install", fontSize=20.sp)
+                Text(stringResource(R.string.button_install),fontSize=20.sp)
             }
             Spacer(modifier = Modifier.height(80.dp))
         }

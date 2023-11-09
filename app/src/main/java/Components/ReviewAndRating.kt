@@ -10,9 +10,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,17 +29,6 @@ import com.example.dotapage.ui.theme.fontF
 
 data class Review(val author: String, val date: String, val body: String, val picture: Int)
 
-val data: List<Review> = listOf(
-    Review("Auguste Conte",
-        "February 14, 2019",
-        "Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.",
-        R.drawable.profile_1),
-    Review("Jang Marcelino",
-        "February 14, 2019",
-        "Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.",
-        R.drawable.profile_2)
-)
-
 val review = Review("Auguste Conte",
     "February 14, 2019",
     "Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.",
@@ -49,9 +36,22 @@ val review = Review("Auguste Conte",
 
 @Composable
 fun ReviewAndRating() {
+    val data: List<Review> = listOf(
+        Review(
+            stringResource(R.string.review1_name),
+            stringResource(R.string.review1_date),
+            stringResource(R.string.review1_text),
+            R.drawable.profile_1),
+        Review(
+            stringResource(R.string.review2_name),
+            stringResource(R.string.review2_date),
+            stringResource(R.string.review2_text),
+            R.drawable.profile_2)
+    )
+
     Column {
         Text(
-            "Review & Ratings",
+            stringResource(R.string.review_title),
             fontSize = 16.sp,
             color = AppTheme.TextColors.primary,
             fontFamily = fontF,
@@ -123,7 +123,7 @@ fun Rating() {
             RatingStars(4.9f, modifier = Modifier
                 .height(12.dp))
             Spacer(modifier = Modifier.height(8.dp))
-            Text("70M Reviews",
+            Text("70" + stringResource(R.string.units_million) + " " + stringResource(R.string.reviews_text),
                 color = AppTheme.TextColors.secondary,
                 fontSize=12.sp,
                 fontFamily = fontF

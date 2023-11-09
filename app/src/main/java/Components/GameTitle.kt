@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -63,7 +64,8 @@ private fun GameInfo() {
         modifier = Modifier
             .height(84.dp)
     ) {
-        Text("DoTA 2",
+        Text(
+            stringResource(R.string.app_title),
             color = AppTheme.TextColors.title,
             fontSize = 20.sp,
             fontFamily = fontF,
@@ -73,7 +75,7 @@ private fun GameInfo() {
             RatingStars(4.9f, modifier = Modifier
                 .height(12.dp))
             Spacer(modifier = Modifier.width(10.dp))
-            Text("70M",
+            Text("70" + stringResource(R.string.units_million),
                 fontSize = 10.sp,
                 fontFamily = fontF,
                 color = AppTheme.TextColors.secondary)
